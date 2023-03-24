@@ -11,11 +11,9 @@ int i;
 void setup() {
 
   Serial.begin(9600); 
-
-  // pinMode(led, OUTPUT);
   myservo.attach(2);
+  // pinMode(led, OUTPUT);
   // Servo is stationary.
-  myservo.write(-90);
 }
 
 
@@ -26,13 +24,12 @@ void loop() {
   if (Serial.available() > 0) {
 
   received = Serial.read();
-
-    if (received = 'y')
+  delay(1000); 
+    if (received == 'y')
     {
-      myservo.write(180);
-      delay(1000);
-      myservo.write(-90);
-      delay(1000);
+      myservo.write(150);
+      delay(1000); 
+      myservo.write(93); 
     }
 
     if (received == 'a'){
